@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TotalContratsService } from './total-contrats.service';
+import { TotalContratsService } from '../get-list-of-lists.service';
 
 describe('TotalContratsService', () => {
   let service: TotalContratsService;

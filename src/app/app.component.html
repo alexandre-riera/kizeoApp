@@ -5,20 +5,21 @@
     <kiz-sidebar-menu></kiz-sidebar-menu>
     <kiz-counter [numberOfContracts]=456 title="Nombre de contrats" image_src="/assets/img/contrats.png"></kiz-counter>
     <kiz-counter [numberOfContracts]=821 title="Nombre d'équipements" image_src="/assets/img/equipement.png"></kiz-counter>
+    
+    </main>
     <table>
         <thead>
             <tr>
-                <th>Contact</th>
-                <th>Adresse</th>
-                <th>Numéro de contrat</th>
+                <td>Nom de la liste</td>
+                <td>ID de la liste</td>
+                <td>Update</td>
             </tr>
         </thead>
-        <tbody>
-            <!-- <tr *ngFor="let contrat of contrats$">
-                <td>{{ contrat$ }}</td> -->
-                
-                <!-- </tr> -->
-            </tbody>
-        </table>
-    </main>
-    <h3>vvvvv{{ contrats$ | async }}</h3>
+        <tbody *ngFor="let object of lists">
+            <tr *ngFor="let obj of object">
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.update_time }}</td>
+            </tr>
+        </tbody>
+    </table>
