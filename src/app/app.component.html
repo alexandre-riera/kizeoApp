@@ -6,7 +6,24 @@
     <kiz-counter [numberOfContracts]=456 title="Nombre de contrats" image_src="/assets/img/contrats.png"></kiz-counter>
     <kiz-counter [numberOfContracts]=821 title="Nombre d'équipements" image_src="/assets/img/equipement.png"></kiz-counter>
     
-    </main>
+</main>
+    <table>
+        <thead>
+            <tr>
+                <td>Nom de la liste</td>
+                <td>ID de la liste</td>
+                <td>Update</td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let object of lists">
+            <tr *ngFor="let obj of object">
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.id }}</td>
+                <td>{{ obj.update_time }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>liste équipement 38</h3>
     <table>
         <thead>
             <tr>
