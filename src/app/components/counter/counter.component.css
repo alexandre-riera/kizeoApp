@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  /* Titre de la card */
+  .mat-mdc-card-title{
+    text-align: center;
+    margin-top: 10px;
+  }
+  /* Nombre de contrats */
+  .mat-mdc-card-content{
+    font-size: 35px;
+    max-width: fit-content;
+    margin-left: 90px;
+    margin-top: -25px;
+  }
+  /* Nombre de contrats */
+  img{
+    margin-left: 45px;
+  }

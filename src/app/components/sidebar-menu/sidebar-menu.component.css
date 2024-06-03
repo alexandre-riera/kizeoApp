@@ -1,0 +1,19 @@
+.menu_sidebar_container{
+    padding: 40px;
+    height: 80vh;
+    width: 250px;
+    border-right: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/*Enlever le point noir en début d'item de liste*/
+button{
+    list-style-type: none;
+}
+/*Enlever le soulignement des liens sur les items*/
+button a{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
