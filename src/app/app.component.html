@@ -2,11 +2,12 @@
 </header>
 <kiz-agence-title></kiz-agence-title>
 <main class="main_container">
-    <kiz-sidebar-menu></kiz-sidebar-menu>
-    <kiz-counter [numberOfContracts]=456 title="Nombre de contrats" image_src="/assets/img/contrats.png"></kiz-counter>
-    <kiz-counter [numberOfContracts]=821 title="Nombre d'équipements" image_src="/assets/img/equipement.png"></kiz-counter>
+    <kiz-sidebar-menu />
+    <kiz-counter [numberOfContracts]=456 title="Nombre de contrats" image_src="/assets/img/contrats.png" />
+    <kiz-counter [numberOfContracts]=821 title="Nombre d'équipements" image_src="/assets/img/equipement.png" />
     
 </main>
+    <h3>Listes sur KIZEO</h3>
     <table>
         <thead>
             <tr>
@@ -23,20 +24,28 @@
             </tr>
         </tbody>
     </table>
-    <h3>liste équipement 38</h3>
+    <h3>Flotte auto par agence</h3>
     <table>
         <thead>
             <tr>
-                <td>Nom de la liste</td>
-                <td>ID de la liste</td>
-                <td>Update</td>
+                <td>Marque</td>
+                <td>Modèle</td>
+                <td>Immatriculation</td>
+                <td>1ère mise en circulation</td>
+                <td>Crit' air</td>
+                <td>CV</td>
+                <td>Énergie</td>
             </tr>
         </thead>
-        <tbody *ngFor="let object of lists">
-            <tr *ngFor="let obj of object">
-                <td>{{ obj.name }}</td>
-                <td>{{ obj.id }}</td>
-                <td>{{ obj.update_time }}</td>
+        <tbody>
+            <tr *ngFor="let obj of flotteAuto">
+                <td>{{ obj[1] }}</td>
+                <td>{{ obj[2] }}</td>
+                <td>{{ obj[0] }}</td>
+                <td>{{ obj[3] }}</td>
+                <td>{{ obj[4] }}</td>
+                <td>{{ obj[5] }}</td>
+                <td>{{ obj[6] }}</td>
             </tr>
         </tbody>
     </table>

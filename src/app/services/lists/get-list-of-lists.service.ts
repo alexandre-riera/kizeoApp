@@ -30,11 +30,12 @@ export class ListsService {
   */
   public getListDefinitionById(id: number){
     let listId = id;
-    let listOfLists = this.getLists();
-    const url: string = environment.baseUrl + '/lists/' + listId + '/complete';
+    const url: string = environment.baseUrl + '/lists/' + listId;
     const token: string = environment.apiKey;
     
     let listDefinition: any = [];
+    let listDefinitionArray: any = [];
+    let listDefinitionSplittedArray: any = [];
 
     fetch(url, {
       method: 'GET',
@@ -44,9 +45,28 @@ export class ListsService {
       }
     })
     .then((response) => response.json())
-    .then((data) => (listDefinition.push(data.list)));
+    .then((data) => (listDefinition.push(data.list.items)))
+    .then(() =>{
+      // Split elements in response by  [ : | and  ]
+      listDefinition[0].map((element: string) => {
+        listDefinitionArray.push(element.split(/[:|]/));
+      })
+      
+      // Filter all double results in listDefinitionArray and push the result in listDefinitionSplittedArray
+      let arrayLength = listDefinitionArray.length;
 
-    return listDefinition;
+      for(let i = 0; i < arrayLength; i++) {
+        let result = listDefinitionArray[i].filter(isUnique)
+        listDefinitionSplittedArray.push(result)
+      }
+    })
+    ;
+    
+    function isUnique(item: any, position: any, array: string | any[]) {
+      return array.indexOf(item) === position;
+    }
+
+    return listDefinitionSplittedArray;
   }
 
 
